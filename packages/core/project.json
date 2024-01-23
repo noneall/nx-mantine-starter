@@ -14,16 +14,20 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
+        "emptyOutDir": true,
         "outputPath": "dist/packages/core"
       },
       "configurations": {
         "development": {
-          "mode": "development"
+          "mode": "development",
+          "sourcemap": true,
+          "watch": true
         },
         "production": {
           "mode": "production"
         }
-      }
+      },
+      "dependsOn": ["lint"]
     },
     "test": {
       "executor": "@nx/vite:test",
