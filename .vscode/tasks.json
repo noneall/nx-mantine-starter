@@ -1,0 +1,33 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Update Git Submodules",
+      "type": "shell",
+      "command": "git submodule update --remote && git commit -am 'Update submodules' && git push",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clone Repository and Initialize Submodules",
+      "type": "shell",
+      "command": "git clone --recursive [URL of the Git repository] && cd $(basename $_ .git) && git submodule update --init --recursive",
+      "problemMatcher": []
+    },
+    {
+      "label": "Initialize and Update Submodules",
+      "type": "shell",
+      "command": "git submodule update --init --recursive",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
