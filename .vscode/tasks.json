@@ -28,6 +28,26 @@
         "kind": "build",
         "isDefault": true
       }
-    }
+    },
+    {
+      "label": "Update Mantine Submodule and Install Dependencies",
+      "type": "shell",
+      "command": "git submodule update --init --recursive && cd vendors/mantine && git switch wire-storybook-to-custom-theme && git fetch -p && git pull && cd ../.. && yarn install",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Start Mantine Storybook",
+      "type": "shell",
+      "command": "cd vendors/mantine && yarn storybook",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
   ]
 }
