@@ -1,4 +1,4 @@
 [submodule "vendors/mantine"]
 	path = vendors/mantine
 	url = https://github.com/noneall/mantine.git
-	branch = wire-storybook-to-custom-theme
+	branch = master
